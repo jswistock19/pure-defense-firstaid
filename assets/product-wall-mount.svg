@@ -1,35 +1,71 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240">
   <defs>
-    <linearGradient id="bgWM" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0c1520"/><stop offset="100%" stop-color="#111e30"/></linearGradient>
-    <filter id="sWM"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/></filter>
+    <linearGradient id="bgWM" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <radialGradient id="atmosWM" cx="0.5" cy="0.6" r="0.6">
+      <stop offset="0%" stop-color="#e52535" stop-opacity="0.08"/>
+      <stop offset="60%" stop-color="#1a6fc4" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="mountBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#333840"/>
+      <stop offset="100%" stop-color="#1e2128"/>
+    </linearGradient>
+    <linearGradient id="canWM" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2a2d35"/>
+      <stop offset="15%" stop-color="#3d4150"/>
+      <stop offset="40%" stop-color="#52576a"/>
+      <stop offset="55%" stop-color="#6b7089"/>
+      <stop offset="70%" stop-color="#52576a"/>
+      <stop offset="100%" stop-color="#2a2d35"/>
+    </linearGradient>
+    <linearGradient id="lblWM" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1e2e"/>
+      <stop offset="100%" stop-color="#0f1220"/>
+    </linearGradient>
+    <filter id="glowWM"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadowWM"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/></filter>
+    <filter id="bkWM"><feGaussianBlur stdDeviation="3"/></filter>
   </defs>
   <rect width="280" height="240" fill="url(#bgWM)" rx="12"/>
-  <g filter="url(#sWM)">
-    <!-- Wall plate -->
-    <rect x="100" y="40" width="80" height="30" rx="4" fill="#555" stroke="#666" stroke-width="0.5"/>
-    <!-- Mounting bracket arms -->
-    <path d="M110 70 L110 160 Q110 175 125 175 L155 175 Q170 175 170 160 L170 70" fill="none" stroke="#777" stroke-width="4" stroke-linecap="round"/>
-    <!-- Bracket base -->
-    <rect x="108" y="65" width="64" height="8" rx="2" fill="#666"/>
-    <!-- Can sitting in bracket -->
-    <rect x="118" y="75" width="44" height="90" rx="5" fill="#e8e8e8"/>
-    <ellipse cx="140" cy="75" rx="22" ry="4" fill="#d0d0d0"/>
-    <ellipse cx="140" cy="165" rx="22" ry="3.5" fill="#c0c0c0"/>
-    <rect x="128" y="60" width="24" height="18" rx="4" fill="#d0d0d0"/>
-    <circle cx="140" cy="68" r="4" fill="#999"/>
-    <!-- Can label -->
-    <rect x="121" y="88" width="38" height="60" rx="2" fill="#fff"/>
-    <rect x="121" y="88" width="38" height="14" fill="#e52535" rx="2"/>
-    <text x="140" y="98" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="6" fill="#fff">EMERGENCY</text>
-    <text x="140" y="116" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="5" fill="#1a6fc4">PURE DEFENSE</text>
-    <text x="140" y="132" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="7" fill="#e52535">FIRST AID</text>
-    <!-- Mounting screws -->
-    <circle cx="115" cy="55" r="3" fill="#888" stroke="#666" stroke-width="0.5"/>
-    <circle cx="115" cy="55" r="1" fill="#555"/>
-    <circle cx="165" cy="55" r="3" fill="#888" stroke="#666" stroke-width="0.5"/>
-    <circle cx="165" cy="55" r="1" fill="#555"/>
+  <rect width="280" height="240" fill="url(#atmosWM)" rx="12"/>
+  <circle cx="50" cy="55" r="10" fill="#e52535" opacity="0.05" filter="url(#bkWM)"/>
+  <circle cx="235" cy="40" r="12" fill="#1a6fc4" opacity="0.04" filter="url(#bkWM)"/>
+  <!-- Floor glow -->
+  <ellipse cx="140" cy="212" rx="70" ry="16" fill="#e52535" opacity="0.08" filter="url(#glowWM)"/>
+  <!-- Mount bracket -->
+  <g filter="url(#shadowWM)">
+    <!-- Back plate -->
+    <rect x="90" y="40" width="100" height="160" rx="4" fill="url(#mountBody)" stroke="#444" stroke-width="0.5"/>
+    <!-- Mounting holes -->
+    <circle cx="105" cy="55" r="4" fill="#1a1d25" stroke="#555" stroke-width="0.5"/>
+    <circle cx="105" cy="55" r="1.5" fill="#0a0e1a"/>
+    <circle cx="175" cy="55" r="4" fill="#1a1d25" stroke="#555" stroke-width="0.5"/>
+    <circle cx="175" cy="55" r="1.5" fill="#0a0e1a"/>
+    <!-- Label plate -->
+    <rect x="100" y="66" width="80" height="16" rx="2" fill="#e52535"/>
+    <text x="140" y="77" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="6" fill="#fff" letter-spacing="0.8">PURE DEFENSE</text>
+    <!-- Holder clamp -->
+    <rect x="104" y="88" width="72" height="95" rx="5" fill="#252830" stroke="#3a3d48" stroke-width="0.5"/>
+    <!-- Can in holder -->
+    <rect x="112" y="85" width="56" height="100" rx="4" fill="url(#canWM)"/>
+    <rect x="112" y="98" width="56" height="60" fill="url(#lblWM)"/>
+    <rect x="112" y="98" width="56" height="14" fill="#e52535"/>
+    <text x="140" y="108" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="6" fill="#fff" letter-spacing="0.5">PURE</text>
+    <rect x="112" y="112" width="56" height="11" fill="#1a6fc4"/>
+    <text x="140" y="121" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="5.5" fill="#fff" letter-spacing="0.3">DEFENSE</text>
+    <text x="140" y="135" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="5" fill="#ccc">FIRST AID</text>
+    <text x="140" y="145" text-anchor="middle" font-family="Arial,sans-serif" font-size="3.5" fill="#888">STERILE WASH</text>
+    <!-- Trigger -->
+    <rect x="130" y="80" width="16" height="12" rx="2" fill="#444"/>
+    <path d="M146,86 L158,86 L158,82 L164,86 L158,90 L158,86" fill="#3a3a3a"/>
+    <!-- Bottom label -->
+    <rect x="100" y="188" width="80" height="12" rx="2" fill="rgba(10,14,26,0.5)" stroke="#444" stroke-width="0.3"/>
+    <text x="140" y="196" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="4" fill="#ccc">TRUCK / WALL MOUNT</text>
   </g>
-  <!-- Label -->
-  <rect x="90" y="192" width="100" height="22" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-  <text x="140" y="207" text-anchor="middle" font-family="Arial,sans-serif" font-weight="600" font-size="8" fill="#8896a7">TRUCK / WALL MOUNT</text>
+  <circle cx="80" cy="85" r="1" fill="#fff" opacity="0.12"/>
+  <circle cx="200" cy="70" r="1" fill="#e52535" opacity="0.18"/>
 </svg>

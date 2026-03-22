@@ -1,43 +1,74 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240">
   <defs>
-    <linearGradient id="bgTS" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1425"/><stop offset="100%" stop-color="#0e1a30"/></linearGradient>
-    <linearGradient id="metalTS" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#999"/><stop offset="40%" stop-color="#ddd"/><stop offset="100%" stop-color="#999"/></linearGradient>
-    <filter id="sTS"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/></filter>
-    <filter id="gTS"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <linearGradient id="glowTS" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#1a6fc4" stop-opacity="0.15"/><stop offset="100%" stop-color="#1a6fc4" stop-opacity="0"/></linearGradient>
+    <linearGradient id="bgTS" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <radialGradient id="atmosTS" cx="0.5" cy="0.55" r="0.6">
+      <stop offset="0%" stop-color="#1a6fc4" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#e52535" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="stationBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d0d4dc"/>
+      <stop offset="100%" stop-color="#a8acb5"/>
+    </linearGradient>
+    <linearGradient id="mirrorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a5568"/>
+      <stop offset="30%" stop-color="#718096"/>
+      <stop offset="70%" stop-color="#4a5568"/>
+      <stop offset="100%" stop-color="#2d3748"/>
+    </linearGradient>
+    <filter id="glowTS"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadowTS"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/></filter>
+    <filter id="bkTS"><feGaussianBlur stdDeviation="3"/></filter>
   </defs>
   <rect width="280" height="240" fill="url(#bgTS)" rx="12"/>
-  <ellipse cx="140" cy="210" rx="80" ry="12" fill="url(#glowTS)" filter="url(#gTS)"/>
-  <g filter="url(#sTS)">
-    <!-- Wall plate -->
-    <rect x="55" y="35" width="170" height="160" rx="8" fill="url(#metalTS)" stroke="#888" stroke-width="0.5"/>
-    <!-- Mirror -->
-    <rect x="105" y="45" width="70" height="55" rx="4" fill="#b8d8f0" opacity="0.7"/>
-    <rect x="105" y="45" width="70" height="55" rx="4" fill="none" stroke="#aaa" stroke-width="1"/>
-    <!-- Mirror reflection -->
-    <path d="M110 50 L130 50 L110 70Z" fill="#fff" opacity="0.2"/>
+  <rect width="280" height="240" fill="url(#atmosTS)" rx="12"/>
+  <circle cx="40" cy="50" r="10" fill="#1a6fc4" opacity="0.05" filter="url(#bkTS)"/>
+  <circle cx="245" cy="45" r="12" fill="#e52535" opacity="0.04" filter="url(#bkTS)"/>
+  <!-- Floor glow -->
+  <ellipse cx="140" cy="212" rx="85" ry="18" fill="#1a6fc4" opacity="0.08" filter="url(#glowTS)"/>
+  <!-- Station body -->
+  <g filter="url(#shadowTS)">
+    <!-- Main panel -->
+    <rect x="55" y="30" width="170" height="175" rx="5" fill="url(#stationBody)" stroke="#999" stroke-width="0.5"/>
+    <!-- Red header -->
+    <rect x="60" y="36" width="160" height="24" rx="2" fill="#e52535"/>
+    <text x="140" y="46" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="6" fill="#fff" letter-spacing="1">PURE DEFENSE</text>
+    <text x="140" y="56" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="4.5" fill="rgba(255,255,255,0.85)">TWIN STATION + MIRROR</text>
     <!-- Left can holder -->
-    <rect x="68" y="110" width="30" height="70" rx="5" fill="#ddd" stroke="#ccc" stroke-width="0.5"/>
-    <rect x="72" y="115" width="22" height="55" rx="3" fill="#f0f0f0"/>
-    <ellipse cx="83" cy="115" rx="11" ry="3" fill="#d0d0d0"/>
-    <rect x="75" y="125" width="16" height="30" rx="2" fill="#fff"/>
-    <rect x="75" y="125" width="16" height="8" fill="#e52535" rx="2"/>
-    <text x="83" y="145" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="4" fill="#e52535">PD</text>
+    <rect x="65" y="68" width="45" height="80" rx="3" fill="#555" stroke="#666" stroke-width="0.3"/>
+    <!-- Can in holder -->
+    <rect x="72" y="72" width="30" height="70" rx="3" fill="#3d4150"/>
+    <rect x="72" y="82" width="30" height="28" fill="#1a1e2e"/>
+    <rect x="72" y="82" width="30" height="8" fill="#e52535" rx="1"/>
+    <text x="87" y="89" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="4" fill="#fff">PURE</text>
+    <rect x="72" y="90" width="30" height="7" fill="#1a6fc4" rx="1"/>
+    <text x="87" y="96" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="3.5" fill="#fff">DEFENSE</text>
+    <!-- Mirror center -->
+    <rect x="115" y="68" width="50" height="80" rx="3" fill="url(#mirrorGrad)" stroke="#888" stroke-width="0.5"/>
+    <!-- Mirror reflection lines -->
+    <line x1="120" y1="75" x2="135" y2="90" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+    <line x1="125" y1="75" x2="140" y2="90" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+    <line x1="130" y1="75" x2="145" y2="90" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+    <text x="140" y="115" text-anchor="middle" font-family="Arial,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.25)">MIRROR</text>
     <!-- Right can holder -->
-    <rect x="182" y="110" width="30" height="70" rx="5" fill="#ddd" stroke="#ccc" stroke-width="0.5"/>
-    <rect x="186" y="115" width="22" height="55" rx="3" fill="#f0f0f0"/>
-    <ellipse cx="197" cy="115" rx="11" ry="3" fill="#d0d0d0"/>
-    <rect x="189" y="125" width="16" height="30" rx="2" fill="#fff"/>
-    <rect x="189" y="125" width="16" height="8" fill="#e52535" rx="2"/>
-    <text x="197" y="145" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="4" fill="#e52535">PD</text>
-    <!-- Center label -->
-    <rect x="108" y="112" width="64" height="30" rx="3" fill="#fff"/>
-    <text x="140" y="127" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="6" fill="#e52535">PURE DEFENSE</text>
-    <text x="140" y="137" text-anchor="middle" font-family="Arial,sans-serif" font-size="5" fill="#666">TWIN STATION</text>
-    <!-- Screws -->
-    <circle cx="70" cy="50" r="3.5" fill="#999" stroke="#777" stroke-width="0.5"/>
-    <circle cx="70" cy="50" r="1.2" fill="#666"/>
-    <circle cx="210" cy="50" r="3.5" fill="#999" stroke="#777" stroke-width="0.5"/>
-    <circle cx="210" cy="50" r="1.2" fill="#666"/>
+    <rect x="170" y="68" width="45" height="80" rx="3" fill="#555" stroke="#666" stroke-width="0.3"/>
+    <rect x="177" y="72" width="30" height="70" rx="3" fill="#3d4150"/>
+    <rect x="177" y="82" width="30" height="28" fill="#1a1e2e"/>
+    <rect x="177" y="82" width="30" height="8" fill="#e52535" rx="1"/>
+    <text x="192" y="89" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="4" fill="#fff">PURE</text>
+    <rect x="177" y="90" width="30" height="7" fill="#1a6fc4" rx="1"/>
+    <text x="192" y="96" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="3.5" fill="#fff">DEFENSE</text>
+    <!-- Bottom info -->
+    <rect x="65" y="158" width="150" height="22" rx="2" fill="rgba(10,14,26,0.5)" stroke="#888" stroke-width="0.3"/>
+    <text x="140" y="170" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="5" fill="#ccc">SCREW-MOUNT TWIN STATION</text>
+    <text x="140" y="177" text-anchor="middle" font-family="Arial,sans-serif" font-size="3.5" fill="#999">OSHA COMPLIANT • SELF-ADMINISTERED</text>
+    <!-- Top edge highlight -->
+    <line x1="55" y1="30" x2="225" y2="30" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
   </g>
+  <circle cx="80" cy="80" r="1" fill="#fff" opacity="0.1"/>
+  <circle cx="210" cy="55" r="1" fill="#1a6fc4" opacity="0.18"/>
 </svg>

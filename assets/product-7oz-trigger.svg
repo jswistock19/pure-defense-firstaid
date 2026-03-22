@@ -1,37 +1,94 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240">
   <defs>
-    <linearGradient id="bg7" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#101d35"/></linearGradient>
-    <linearGradient id="can7" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#c8c8c8"/><stop offset="30%" stop-color="#f0f0f0"/><stop offset="55%" stop-color="#fff"/><stop offset="100%" stop-color="#b0b0b0"/></linearGradient>
-    <linearGradient id="glow7" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#e52535" stop-opacity="0.25"/><stop offset="100%" stop-color="#1a6fc4" stop-opacity="0.05"/></linearGradient>
-    <filter id="s7"><feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#000" flood-opacity="0.45"/></filter>
-    <filter id="g7"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="bg7" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <radialGradient id="atmos7" cx="0.5" cy="0.6" r="0.65">
+      <stop offset="0%" stop-color="#1a6fc4" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#e52535" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="canBody7" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2a2d35"/>
+      <stop offset="12%" stop-color="#3d4150"/>
+      <stop offset="38%" stop-color="#52576a"/>
+      <stop offset="52%" stop-color="#6b7089"/>
+      <stop offset="68%" stop-color="#52576a"/>
+      <stop offset="100%" stop-color="#2a2d35"/>
+    </linearGradient>
+    <linearGradient id="labelBg7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1e2e"/>
+      <stop offset="100%" stop-color="#0f1220"/>
+    </linearGradient>
+    <linearGradient id="red7" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c41d2d"/>
+      <stop offset="50%" stop-color="#e52535"/>
+      <stop offset="100%" stop-color="#c41d2d"/>
+    </linearGradient>
+    <linearGradient id="blue7" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1456a0"/>
+      <stop offset="50%" stop-color="#1a6fc4"/>
+      <stop offset="100%" stop-color="#1456a0"/>
+    </linearGradient>
+    <linearGradient id="trig7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#555"/>
+      <stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <filter id="glow7"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadow7"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.55"/></filter>
+    <filter id="bk7"><feGaussianBlur stdDeviation="3"/></filter>
+    <clipPath id="lc7"><rect x="100" y="42" width="72" height="148" rx="2"/></clipPath>
   </defs>
   <rect width="280" height="240" fill="url(#bg7)" rx="12"/>
-  <ellipse cx="140" cy="212" rx="75" ry="16" fill="url(#glow7)" filter="url(#g7)"/>
-  <!-- Main 7oz can - larger -->
-  <g filter="url(#s7)">
-    <rect x="100" y="22" width="80" height="195" rx="7" fill="url(#can7)"/>
-    <ellipse cx="140" cy="22" rx="40" ry="7" fill="#d8d8d8"/>
-    <ellipse cx="140" cy="217" rx="40" ry="5.5" fill="#c0c0c0"/>
-    <!-- Trigger nozzle -->
-    <rect x="124" y="4" width="32" height="22" rx="4" fill="#d0d0d0"/>
-    <path d="M156 12 L180 7 L178 15 L156 18Z" fill="#c0c0c0" stroke="#aaa" stroke-width="0.5"/>
-    <circle cx="140" cy="12" r="4.5" fill="#999"/>
+  <rect width="280" height="240" fill="url(#atmos7)" rx="12"/>
+  <circle cx="42" cy="48" r="14" fill="#1a6fc4" opacity="0.06" filter="url(#bk7)"/>
+  <circle cx="242" cy="38" r="16" fill="#e52535" opacity="0.04" filter="url(#bk7)"/>
+  <circle cx="35" cy="185" r="10" fill="#e52535" opacity="0.05" filter="url(#bk7)"/>
+  <circle cx="250" cy="170" r="14" fill="#1a6fc4" opacity="0.04" filter="url(#bk7)"/>
+  <circle cx="60" cy="120" r="6" fill="#fff" opacity="0.03" filter="url(#bk7)"/>
+  <!-- Floor glow - bigger for 7oz hero -->
+  <ellipse cx="136" cy="215" rx="80" ry="22" fill="#1a6fc4" opacity="0.12" filter="url(#glow7)"/>
+  <ellipse cx="136" cy="217" rx="50" ry="10" fill="#1a6fc4" opacity="0.08"/>
+  <!-- Can - largest size -->
+  <g filter="url(#shadow7)">
+    <rect x="100" y="22" width="72" height="190" rx="6" fill="url(#canBody7)"/>
+    <ellipse cx="136" cy="22" rx="36" ry="6" fill="#4a4e5e"/>
+    <ellipse cx="136" cy="22" rx="34" ry="5" fill="#3d4150"/>
+    <ellipse cx="136" cy="212" rx="36" ry="5" fill="#2a2d35"/>
+    <!-- Trigger -->
+    <rect x="125" y="5" width="22" height="20" rx="3" fill="#444"/>
+    <path d="M147,15 L170,15 L170,9 L182,15 L170,21 L170,15" fill="url(#trig7)" stroke="#555" stroke-width="0.5"/>
+    <rect x="167" y="11" width="18" height="8" rx="2" fill="#3a3a3a"/>
+    <circle cx="176" cy="15" r="2.5" fill="#555"/>
+    <path d="M147,20 Q162,20 170,26 L170,30 Q162,24 147,24Z" fill="#3a3a3a"/>
     <!-- Label -->
-    <rect x="104" y="50" width="72" height="148" rx="3" fill="#fff"/>
-    <rect x="104" y="50" width="72" height="30" fill="#e52535" rx="3"/>
-    <rect x="104" y="72" width="72" height="8" fill="#e52535"/>
-    <text x="140" y="70" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" fill="#fff" letter-spacing="0.5">EMERGENCY</text>
-    <text x="140" y="100" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-style="italic" font-size="9" fill="#1a6fc4">PURE DEFENSE</text>
-    <text x="140" y="130" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="15" fill="#e52535">FIRST AID</text>
-    <text x="140" y="148" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" fill="#666">FOR SKIN AND EYES</text>
-    <text x="140" y="162" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#444">STERILE WASH</text>
-    <text x="140" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" fill="#999">7 Fl. Oz. — 207mL</text>
-    <rect x="107" y="50" width="10" height="148" rx="3" fill="rgba(255,255,255,0.12)"/>
+    <g clip-path="url(#lc7)">
+      <rect x="100" y="42" width="72" height="148" fill="url(#labelBg7)"/>
+      <rect x="100" y="42" width="72" height="26" fill="url(#red7)"/>
+      <text x="136" y="60" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="11" fill="#fff" letter-spacing="1.5">PURE</text>
+      <rect x="100" y="68" width="72" height="20" fill="url(#blue7)"/>
+      <text x="136" y="82" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="10" fill="#fff" letter-spacing="0.8">DEFENSE</text>
+      <line x1="112" y1="95" x2="160" y2="95" stroke="#e52535" stroke-width="0.6" opacity="0.6"/>
+      <!-- Shield -->
+      <path d="M132,100 L136,97 L140,100 L140,107 L136,110 L132,107Z" fill="none" stroke="#e52535" stroke-width="0.7" opacity="0.8"/>
+      <text x="136" y="105" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="4" fill="#e52535">+</text>
+      <text x="136" y="121" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="9" fill="#ccc" letter-spacing="0.5">FIRST AID</text>
+      <text x="136" y="133" text-anchor="middle" font-family="Arial,sans-serif" font-size="5.5" fill="#888">STERILE WASH</text>
+      <text x="136" y="143" text-anchor="middle" font-family="Arial,sans-serif" font-size="4" fill="#666">FOR SKIN &amp; EYES</text>
+      <rect x="100" y="150" width="72" height="1" fill="#333"/>
+      <text x="136" y="162" text-anchor="middle" font-family="Arial,sans-serif" font-weight="600" font-size="4" fill="#1a6fc4">Water Life Science®</text>
+      <text x="136" y="172" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="5.5" fill="#999">7 FL OZ — 207mL</text>
+      <text x="136" y="183" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="4" fill="#e52535" letter-spacing="0.5">MADE IN U.S.A.</text>
+    </g>
+    <rect x="100" y="42" width="72" height="148" rx="2" fill="none" stroke="#1a6fc4" stroke-width="0.4" opacity="0.35"/>
+    <rect x="102" y="22" width="12" height="190" rx="6" fill="rgba(255,255,255,0.06)"/>
+    <rect x="158" y="35" width="4" height="174" fill="rgba(255,255,255,0.04)"/>
   </g>
-  <!-- Badge -->
-  <rect x="190" y="30" width="62" height="22" rx="11" fill="rgba(229,37,53,0.15)" stroke="#e52535" stroke-width="1"/>
-  <text x="221" y="45" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="9" fill="#e52535">7 OZ</text>
-  <!-- Star accent -->
-  <text x="36" y="40" font-size="14" fill="#e52535" opacity="0.3">✦</text>
+  <circle cx="75" cy="75" r="1.2" fill="#fff" opacity="0.18"/>
+  <circle cx="210" cy="60" r="1.5" fill="#1a6fc4" opacity="0.25"/>
+  <circle cx="65" cy="160" r="1" fill="#e52535" opacity="0.2"/>
+  <circle cx="220" cy="150" r="1.2" fill="#fff" opacity="0.12"/>
+  <circle cx="50" cy="100" r="0.8" fill="#1a6fc4" opacity="0.15"/>
 </svg>

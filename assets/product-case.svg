@@ -1,42 +1,68 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240">
   <defs>
-    <linearGradient id="bgC" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0c1520"/><stop offset="100%" stop-color="#111e30"/></linearGradient>
-    <linearGradient id="boxC" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3a3a3a"/><stop offset="50%" stop-color="#2a2a2a"/><stop offset="100%" stop-color="#1e1e1e"/></linearGradient>
-    <linearGradient id="glowC" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#1a6fc4" stop-opacity="0.2"/><stop offset="100%" stop-color="#1a6fc4" stop-opacity="0"/></linearGradient>
-    <filter id="sC"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/></filter>
-    <filter id="gC"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="bgC" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <radialGradient id="atmosC" cx="0.5" cy="0.6" r="0.6">
+      <stop offset="0%" stop-color="#e52535" stop-opacity="0.1"/>
+      <stop offset="60%" stop-color="#1a6fc4" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="boxSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a1d25"/>
+      <stop offset="100%" stop-color="#252830"/>
+    </linearGradient>
+    <linearGradient id="boxTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d313b"/>
+      <stop offset="100%" stop-color="#22252e"/>
+    </linearGradient>
+    <linearGradient id="boxFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e2128"/>
+      <stop offset="100%" stop-color="#14161c"/>
+    </linearGradient>
+    <linearGradient id="redC" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c41d2d"/>
+      <stop offset="50%" stop-color="#e52535"/>
+      <stop offset="100%" stop-color="#c41d2d"/>
+    </linearGradient>
+    <filter id="glowC"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadowC"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/></filter>
+    <filter id="bkC"><feGaussianBlur stdDeviation="3"/></filter>
   </defs>
   <rect width="280" height="240" fill="url(#bgC)" rx="12"/>
-  <ellipse cx="140" cy="200" rx="90" ry="18" fill="url(#glowC)" filter="url(#gC)"/>
-  <!-- Box -->
-  <g filter="url(#sC)">
-    <!-- Box front face -->
-    <path d="M50 90 L140 75 L230 90 L230 190 L140 205 L50 190Z" fill="url(#boxC)" stroke="#444" stroke-width="0.5"/>
-    <!-- Box top face -->
-    <path d="M50 90 L100 70 L230 85 L230 90 L140 75 L50 90Z" fill="#3e3e3e"/>
-    <!-- Left side -->
-    <path d="M50 90 L50 190 L55 192 L55 92Z" fill="#222"/>
-    <!-- Label on front -->
-    <rect x="88" y="105" width="104" height="65" rx="4" fill="#fff" opacity="0.95"/>
-    <rect x="88" y="105" width="104" height="20" rx="4" fill="#e52535"/>
-    <text x="140" y="119" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="11" fill="#fff">PURE DEFENSE</text>
-    <text x="140" y="143" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="13" fill="#e52535">FIRST AID</text>
-    <text x="140" y="158" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#666">BULK CASE</text>
-    <!-- Handle -->
-    <path d="M115 75 Q140 60 165 75" fill="none" stroke="#555" stroke-width="3" stroke-linecap="round"/>
-    <!-- Stacked cans icon on box -->
-    <g opacity="0.4">
-      <rect x="70" y="140" width="8" height="30" rx="2" fill="#ccc"/>
-      <rect x="80" y="138" width="8" height="32" rx="2" fill="#ddd"/>
-      <rect x="195" y="138" width="8" height="32" rx="2" fill="#ddd"/>
-      <rect x="205" y="140" width="8" height="30" rx="2" fill="#ccc"/>
-    </g>
+  <rect width="280" height="240" fill="url(#atmosC)" rx="12"/>
+  <circle cx="48" cy="55" r="10" fill="#e52535" opacity="0.05" filter="url(#bkC)"/>
+  <circle cx="240" cy="45" r="12" fill="#1a6fc4" opacity="0.04" filter="url(#bkC)"/>
+  <circle cx="50" cy="185" r="8" fill="#1a6fc4" opacity="0.05" filter="url(#bkC)"/>
+  <!-- Floor glow -->
+  <ellipse cx="140" cy="205" rx="85" ry="20" fill="#e52535" opacity="0.08" filter="url(#glowC)"/>
+  <!-- Box - 3D isometric case -->
+  <g filter="url(#shadowC)">
+    <!-- Front face -->
+    <path d="M60,100 L220,100 L220,195 L60,195Z" fill="url(#boxFront)" stroke="#2a2d38" stroke-width="0.5"/>
+    <!-- Top face -->
+    <path d="M60,100 L90,70 L250,70 L220,100Z" fill="url(#boxTop)" stroke="#2a2d38" stroke-width="0.5"/>
+    <!-- Right face -->
+    <path d="M220,100 L250,70 L250,165 L220,195Z" fill="url(#boxSide)" stroke="#2a2d38" stroke-width="0.5"/>
+    <!-- Front label -->
+    <rect x="75" y="110" width="130" height="70" rx="3" fill="rgba(10,14,26,0.8)" stroke="#333" stroke-width="0.5"/>
+    <!-- Red stripe -->
+    <rect x="75" y="110" width="130" height="18" rx="3" fill="url(#redC)"/>
+    <rect x="75" y="125" width="130" height="3" fill="url(#redC)"/>
+    <text x="140" y="123" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="10" fill="#fff" letter-spacing="1.5">PURE DEFENSE</text>
+    <!-- Product info -->
+    <text x="140" y="148" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="10" fill="#ccc" letter-spacing="0.5">FIRST AID</text>
+    <text x="140" y="160" text-anchor="middle" font-family="Arial,sans-serif" font-size="5" fill="#888">STERILE WASH — BULK CASE</text>
+    <line x1="100" y1="166" x2="180" y2="166" stroke="#e52535" stroke-width="0.4" opacity="0.5"/>
+    <text x="140" y="175" text-anchor="middle" font-family="Arial,sans-serif" font-weight="600" font-size="5" fill="#666">FDA REGISTERED FACILITY</text>
+    <!-- Top label -->
+    <text x="170" y="88" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="6" fill="#e52535" letter-spacing="1" transform="skewX(-25) translate(55,-3)">PURE DEFENSE</text>
+    <!-- Edge highlight -->
+    <line x1="60" y1="100" x2="220" y2="100" stroke="rgba(229,37,53,0.2)" stroke-width="1"/>
   </g>
-  <!-- Qty indicators -->
-  <g opacity="0.6">
-    <rect x="55" y="50" width="8" height="28" rx="3" fill="#999" opacity="0.3"/>
-    <rect x="67" y="46" width="8" height="32" rx="3" fill="#aaa" opacity="0.3"/>
-    <rect x="205" y="46" width="8" height="32" rx="3" fill="#aaa" opacity="0.3"/>
-    <rect x="217" y="50" width="8" height="28" rx="3" fill="#999" opacity="0.3"/>
-  </g>
+  <circle cx="85" cy="85" r="1" fill="#fff" opacity="0.12"/>
+  <circle cx="200" cy="60" r="1.2" fill="#e52535" opacity="0.18"/>
+  <circle cx="75" cy="165" r="0.8" fill="#1a6fc4" opacity="0.15"/>
 </svg>

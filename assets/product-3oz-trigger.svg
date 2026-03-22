@@ -1,44 +1,99 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240">
   <defs>
-    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0a1628"/>
-      <stop offset="100%" stop-color="#0f1e38"/>
+    <linearGradient id="bg3t" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#060810"/>
     </linearGradient>
-    <linearGradient id="can2" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#c8c8c8"/>
-      <stop offset="30%" stop-color="#f0f0f0"/>
-      <stop offset="60%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#b0b0b0"/>
+    <radialGradient id="atmos3t" cx="0.5" cy="0.65" r="0.6">
+      <stop offset="0%" stop-color="#1a6fc4" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#e52535" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="canBody3t" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2a2d35"/>
+      <stop offset="15%" stop-color="#3d4150"/>
+      <stop offset="40%" stop-color="#52576a"/>
+      <stop offset="55%" stop-color="#6b7089"/>
+      <stop offset="70%" stop-color="#52576a"/>
+      <stop offset="100%" stop-color="#2a2d35"/>
     </linearGradient>
-    <linearGradient id="glow2" x1="0.5" y1="0" x2="0.5" y2="1">
-      <stop offset="0%" stop-color="#1a6fc4" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#1a6fc4" stop-opacity="0"/>
+    <linearGradient id="labelBg3t" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1e2e"/>
+      <stop offset="100%" stop-color="#0f1220"/>
     </linearGradient>
-    <filter id="shadow2"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/></filter>
-    <filter id="glowF2"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="red3t" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c41d2d"/>
+      <stop offset="50%" stop-color="#e52535"/>
+      <stop offset="100%" stop-color="#c41d2d"/>
+    </linearGradient>
+    <linearGradient id="blue3t" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1456a0"/>
+      <stop offset="50%" stop-color="#1a6fc4"/>
+      <stop offset="100%" stop-color="#1456a0"/>
+    </linearGradient>
+    <linearGradient id="triggerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#555"/>
+      <stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <filter id="glow3t"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadow3t"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/></filter>
+    <filter id="bk3t"><feGaussianBlur stdDeviation="3"/></filter>
+    <clipPath id="lc3t"><rect x="108" y="55" width="60" height="125" rx="2"/></clipPath>
   </defs>
-  <rect width="280" height="240" fill="url(#bg2)" rx="12"/>
-  <ellipse cx="140" cy="205" rx="65" ry="14" fill="url(#glow2)" filter="url(#glowF2)"/>
-  <g filter="url(#shadow2)">
-    <rect x="108" y="38" width="64" height="165" rx="6" fill="url(#can2)"/>
-    <ellipse cx="140" cy="38" rx="32" ry="5.5" fill="#d8d8d8"/>
-    <ellipse cx="140" cy="203" rx="32" ry="4.5" fill="#c0c0c0"/>
-    <!-- Trigger nozzle -->
-    <rect x="126" y="20" width="28" height="22" rx="4" fill="#d0d0d0"/>
-    <path d="M154 30 L172 26 L170 32 L154 34Z" fill="#bbb" stroke="#aaa" stroke-width="0.5"/>
-    <circle cx="140" cy="28" r="4" fill="#999"/>
+  <rect width="280" height="240" fill="url(#bg3t)" rx="12"/>
+  <rect width="280" height="240" fill="url(#atmos3t)" rx="12"/>
+  <!-- Bokeh -->
+  <circle cx="50" cy="50" r="10" fill="#1a6fc4" opacity="0.06" filter="url(#bk3t)"/>
+  <circle cx="235" cy="40" r="14" fill="#e52535" opacity="0.04" filter="url(#bk3t)"/>
+  <circle cx="40" cy="180" r="8" fill="#e52535" opacity="0.05" filter="url(#bk3t)"/>
+  <circle cx="245" cy="160" r="12" fill="#1a6fc4" opacity="0.04" filter="url(#bk3t)"/>
+  <!-- Floor glow -->
+  <ellipse cx="140" cy="212" rx="70" ry="18" fill="#1a6fc4" opacity="0.1" filter="url(#glow3t)"/>
+  <ellipse cx="140" cy="214" rx="42" ry="8" fill="#1a6fc4" opacity="0.06"/>
+  <!-- Can with trigger -->
+  <g filter="url(#shadow3t)">
+    <!-- Can body - slightly larger for 3oz -->
+    <rect x="108" y="35" width="60" height="168" rx="5" fill="url(#canBody3t)"/>
+    <ellipse cx="138" cy="35" rx="30" ry="5" fill="#4a4e5e"/>
+    <ellipse cx="138" cy="35" rx="28" ry="4" fill="#3d4150"/>
+    <ellipse cx="138" cy="203" rx="30" ry="4" fill="#2a2d35"/>
+    <!-- Trigger mechanism -->
+    <rect x="128" y="18" width="20" height="20" rx="3" fill="#444"/>
+    <path d="M148,28 L168,28 L168,22 L178,28 L168,34 L168,28" fill="url(#triggerGrad)" stroke="#555" stroke-width="0.5"/>
+    <rect x="165" y="24" width="16" height="8" rx="2" fill="#3a3a3a"/>
+    <circle cx="173" cy="28" r="2" fill="#555"/>
+    <!-- Trigger guard -->
+    <path d="M148,33 Q160,33 168,38 L168,42 Q160,37 148,37Z" fill="#3a3a3a"/>
     <!-- Label -->
-    <rect x="111" y="60" width="58" height="125" rx="3" fill="#fff"/>
-    <rect x="111" y="60" width="58" height="25" fill="#e52535" rx="3"/>
-    <rect x="111" y="78" width="58" height="7" fill="#e52535"/>
-    <text x="140" y="77" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="10" fill="#fff" letter-spacing="0.5">EMERGENCY</text>
-    <text x="140" y="102" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-style="italic" font-size="8" fill="#1a6fc4">PURE DEFENSE</text>
-    <text x="140" y="128" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="12" fill="#e52535">FIRST AID</text>
-    <text x="140" y="143" text-anchor="middle" font-family="Arial,sans-serif" font-size="5.5" fill="#666">STERILE WASH</text>
-    <text x="140" y="175" text-anchor="middle" font-family="Arial,sans-serif" font-size="5.5" fill="#999">3 Fl. Oz.</text>
-    <rect x="113" y="60" width="9" height="125" rx="3" fill="rgba(255,255,255,0.12)"/>
+    <g clip-path="url(#lc3t)">
+      <rect x="108" y="55" width="60" height="125" fill="url(#labelBg3t)"/>
+      <!-- Red top -->
+      <rect x="108" y="55" width="60" height="22" fill="url(#red3t)"/>
+      <text x="138" y="70" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="9" fill="#fff" letter-spacing="1">PURE</text>
+      <!-- Blue band -->
+      <rect x="108" y="77" width="60" height="16" fill="url(#blue3t)"/>
+      <text x="138" y="89" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="8" fill="#fff" letter-spacing="0.5">DEFENSE</text>
+      <!-- Divider -->
+      <line x1="118" y1="99" x2="158" y2="99" stroke="#e52535" stroke-width="0.5" opacity="0.6"/>
+      <!-- Shield -->
+      <path d="M135,104 L138,102 L141,104 L141,109 L138,111 L135,109Z" fill="none" stroke="#e52535" stroke-width="0.6" opacity="0.8"/>
+      <text x="138" y="108" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="3" fill="#e52535">+</text>
+      <!-- Product text -->
+      <text x="138" y="121" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="7" fill="#ccc" letter-spacing="0.3">FIRST AID</text>
+      <text x="138" y="131" text-anchor="middle" font-family="Arial,sans-serif" font-size="4.5" fill="#888">STERILE WASH</text>
+      <rect x="108" y="140" width="60" height="1" fill="#333"/>
+      <text x="138" y="150" text-anchor="middle" font-family="Arial,sans-serif" font-size="4" fill="#666">FOR SKIN &amp; EYES</text>
+      <text x="138" y="160" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="4.5" fill="#999">3 FL OZ — TRIGGER</text>
+    </g>
+    <rect x="108" y="55" width="60" height="125" rx="2" fill="none" stroke="#1a6fc4" stroke-width="0.3" opacity="0.3"/>
+    <!-- Shine -->
+    <rect x="110" y="35" width="10" height="168" rx="5" fill="rgba(255,255,255,0.06)"/>
+    <rect x="155" y="45" width="3" height="155" fill="rgba(255,255,255,0.04)"/>
   </g>
-  <!-- Trigger badge -->
-  <rect x="190" y="45" width="60" height="22" rx="11" fill="rgba(26,111,196,0.15)" stroke="#1a6fc4" stroke-width="1"/>
-  <text x="220" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="9" fill="#1a6fc4">TRIGGER</text>
+  <!-- Light specs -->
+  <circle cx="85" cy="85" r="1" fill="#fff" opacity="0.15"/>
+  <circle cx="200" cy="70" r="1.2" fill="#1a6fc4" opacity="0.2"/>
+  <circle cx="75" cy="155" r="0.8" fill="#e52535" opacity="0.2"/>
+  <circle cx="210" cy="145" r="1" fill="#fff" opacity="0.1"/>
 </svg>
