@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240">
+  <defs>
+    <linearGradient id="bgH" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0c1520"/><stop offset="100%" stop-color="#111e30"/></linearGradient>
+    <linearGradient id="holsterH" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a1a1a"/><stop offset="40%" stop-color="#2a2a2a"/><stop offset="100%" stop-color="#151515"/></linearGradient>
+    <filter id="sH"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/></filter>
+    <filter id="gH"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="glowH" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#e52535" stop-opacity="0.12"/><stop offset="100%" stop-color="#e52535" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="280" height="240" fill="url(#bgH)" rx="12"/>
+  <ellipse cx="140" cy="215" rx="60" ry="10" fill="url(#glowH)" filter="url(#gH)"/>
+  <g filter="url(#sH)">
+    <!-- Belt clip -->
+    <rect x="118" y="30" width="44" height="18" rx="3" fill="#333" stroke="#444" stroke-width="0.5"/>
+    <rect x="122" y="34" width="36" height="10" rx="2" fill="#222"/>
+    <!-- Belt clip spring -->
+    <path d="M125 48 L125 55 Q125 60 130 60 L150 60 Q155 60 155 55 L155 48" fill="none" stroke="#444" stroke-width="2"/>
+    <!-- Holster body -->
+    <rect x="112" y="55" width="56" height="140" rx="8" fill="url(#holsterH)" stroke="#333" stroke-width="1"/>
+    <!-- Stitching -->
+    <rect x="116" y="60" width="48" height="130" rx="6" fill="none" stroke="#2a2a2a" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <!-- Can visible from top -->
+    <ellipse cx="140" cy="65" rx="22" ry="5" fill="#d0d0d0"/>
+    <ellipse cx="140" cy="65" rx="18" ry="4" fill="#e0e0e0"/>
+    <circle cx="140" cy="65" r="4" fill="#bbb"/>
+    <!-- Snap/retention strap -->
+    <rect x="120" y="80" width="40" height="8" rx="3" fill="#2d2d2d" stroke="#444" stroke-width="0.5"/>
+    <circle cx="140" cy="84" r="3" fill="#555" stroke="#666" stroke-width="0.5"/>
+    <!-- PD logo on holster -->
+    <rect x="124" y="110" width="32" height="20" rx="3" fill="#222" stroke="#e52535" stroke-width="0.5"/>
+    <text x="140" y="123" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="8" fill="#e52535">PD</text>
+    <!-- Drainage holes -->
+    <circle cx="130" cy="175" r="2" fill="#0c1520"/>
+    <circle cx="140" cy="175" r="2" fill="#0c1520"/>
+    <circle cx="150" cy="175" r="2" fill="#0c1520"/>
+  </g>
+  <!-- Badge -->
+  <rect x="178" y="40" width="76" height="22" rx="11" fill="rgba(229,37,53,0.15)" stroke="#e52535" stroke-width="1"/>
+  <text x="216" y="55" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="8" fill="#e52535">DUTY BELT</text>
+</svg>

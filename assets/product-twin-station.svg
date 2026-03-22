@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240">
+  <defs>
+    <linearGradient id="bgTS" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1425"/><stop offset="100%" stop-color="#0e1a30"/></linearGradient>
+    <linearGradient id="metalTS" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#999"/><stop offset="40%" stop-color="#ddd"/><stop offset="100%" stop-color="#999"/></linearGradient>
+    <filter id="sTS"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/></filter>
+    <filter id="gTS"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="glowTS" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#1a6fc4" stop-opacity="0.15"/><stop offset="100%" stop-color="#1a6fc4" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="280" height="240" fill="url(#bgTS)" rx="12"/>
+  <ellipse cx="140" cy="210" rx="80" ry="12" fill="url(#glowTS)" filter="url(#gTS)"/>
+  <g filter="url(#sTS)">
+    <!-- Wall plate -->
+    <rect x="55" y="35" width="170" height="160" rx="8" fill="url(#metalTS)" stroke="#888" stroke-width="0.5"/>
+    <!-- Mirror -->
+    <rect x="105" y="45" width="70" height="55" rx="4" fill="#b8d8f0" opacity="0.7"/>
+    <rect x="105" y="45" width="70" height="55" rx="4" fill="none" stroke="#aaa" stroke-width="1"/>
+    <!-- Mirror reflection -->
+    <path d="M110 50 L130 50 L110 70Z" fill="#fff" opacity="0.2"/>
+    <!-- Left can holder -->
+    <rect x="68" y="110" width="30" height="70" rx="5" fill="#ddd" stroke="#ccc" stroke-width="0.5"/>
+    <rect x="72" y="115" width="22" height="55" rx="3" fill="#f0f0f0"/>
+    <ellipse cx="83" cy="115" rx="11" ry="3" fill="#d0d0d0"/>
+    <rect x="75" y="125" width="16" height="30" rx="2" fill="#fff"/>
+    <rect x="75" y="125" width="16" height="8" fill="#e52535" rx="2"/>
+    <text x="83" y="145" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="4" fill="#e52535">PD</text>
+    <!-- Right can holder -->
+    <rect x="182" y="110" width="30" height="70" rx="5" fill="#ddd" stroke="#ccc" stroke-width="0.5"/>
+    <rect x="186" y="115" width="22" height="55" rx="3" fill="#f0f0f0"/>
+    <ellipse cx="197" cy="115" rx="11" ry="3" fill="#d0d0d0"/>
+    <rect x="189" y="125" width="16" height="30" rx="2" fill="#fff"/>
+    <rect x="189" y="125" width="16" height="8" fill="#e52535" rx="2"/>
+    <text x="197" y="145" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="4" fill="#e52535">PD</text>
+    <!-- Center label -->
+    <rect x="108" y="112" width="64" height="30" rx="3" fill="#fff"/>
+    <text x="140" y="127" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="6" fill="#e52535">PURE DEFENSE</text>
+    <text x="140" y="137" text-anchor="middle" font-family="Arial,sans-serif" font-size="5" fill="#666">TWIN STATION</text>
+    <!-- Screws -->
+    <circle cx="70" cy="50" r="3.5" fill="#999" stroke="#777" stroke-width="0.5"/>
+    <circle cx="70" cy="50" r="1.2" fill="#666"/>
+    <circle cx="210" cy="50" r="3.5" fill="#999" stroke="#777" stroke-width="0.5"/>
+    <circle cx="210" cy="50" r="1.2" fill="#666"/>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240">
+  <defs>
+    <linearGradient id="bgCB" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0c1520"/><stop offset="100%" stop-color="#111e30"/></linearGradient>
+    <linearGradient id="bagCB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2d3a28"/><stop offset="50%" stop-color="#1e2a1a"/><stop offset="100%" stop-color="#151e12"/></linearGradient>
+    <filter id="sCB"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/></filter>
+    <filter id="gCB"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="glowCB" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#4a7a2a" stop-opacity="0.15"/><stop offset="100%" stop-color="#4a7a2a" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="280" height="240" fill="url(#bgCB)" rx="12"/>
+  <ellipse cx="140" cy="210" rx="85" ry="14" fill="url(#glowCB)" filter="url(#gCB)"/>
+  <g filter="url(#sCB)">
+    <!-- Tactical bag body -->
+    <rect x="55" y="65" width="170" height="130" rx="8" fill="url(#bagCB)" stroke="#3a4a30" stroke-width="1"/>
+    <!-- Bag flap top -->
+    <path d="M55 80 Q55 55 75 50 L205 50 Q225 55 225 80" fill="#2a3822" stroke="#3a4a30" stroke-width="0.5"/>
+    <!-- Handle -->
+    <path d="M105 50 Q140 30 175 50" fill="none" stroke="#4a5a3a" stroke-width="4" stroke-linecap="round"/>
+    <!-- MOLLE straps -->
+    <g opacity="0.4">
+      <rect x="65" y="100" width="50" height="4" rx="1" fill="#4a5a3a"/>
+      <rect x="65" y="112" width="50" height="4" rx="1" fill="#4a5a3a"/>
+      <rect x="65" y="124" width="50" height="4" rx="1" fill="#4a5a3a"/>
+      <rect x="165" y="100" width="50" height="4" rx="1" fill="#4a5a3a"/>
+      <rect x="165" y="112" width="50" height="4" rx="1" fill="#4a5a3a"/>
+      <rect x="165" y="124" width="50" height="4" rx="1" fill="#4a5a3a"/>
+    </g>
+    <!-- Front pocket -->
+    <rect x="90" y="80" width="100" height="60" rx="4" fill="#253220" stroke="#3a4a30" stroke-width="0.5"/>
+    <!-- Red cross patch -->
+    <rect x="120" y="90" width="40" height="40" rx="4" fill="#e52535" opacity="0.9"/>
+    <rect x="134" y="94" width="12" height="32" rx="1" fill="#fff"/>
+    <rect x="124" y="102" width="32" height="12" rx="1" fill="#fff"/>
+    <!-- Zipper line -->
+    <line x1="90" y1="80" x2="190" y2="80" stroke="#5a6a4a" stroke-width="1.5"/>
+    <circle cx="190" cy="80" r="3" fill="#888" stroke="#666" stroke-width="0.5"/>
+    <!-- Can tops visible -->
+    <g opacity="0.5">
+      <ellipse cx="80" cy="155" rx="8" ry="3" fill="#ccc"/>
+      <ellipse cx="100" cy="155" rx="8" ry="3" fill="#ccc"/>
+      <ellipse cx="120" cy="155" rx="8" ry="3" fill="#ccc"/>
+      <ellipse cx="140" cy="155" rx="8" ry="3" fill="#ccc"/>
+      <ellipse cx="160" cy="155" rx="8" ry="3" fill="#ccc"/>
+      <ellipse cx="180" cy="155" rx="8" ry="3" fill="#ccc"/>
+    </g>
+    <!-- Buckle -->
+    <rect x="130" y="140" width="20" height="12" rx="2" fill="#888" stroke="#666" stroke-width="0.5"/>
+    <rect x="135" y="143" width="10" height="6" rx="1" fill="#555"/>
+  </g>
+  <!-- Tactical badge -->
+  <rect x="180" y="12" width="78" height="22" rx="11" fill="rgba(74,122,42,0.2)" stroke="#6a9a3a" stroke-width="1"/>
+  <text x="219" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="8" fill="#7aaa4a">TACTICAL</text>
+</svg>

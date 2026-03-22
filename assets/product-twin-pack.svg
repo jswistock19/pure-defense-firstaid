@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240">
+  <defs>
+    <linearGradient id="bgTP" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#0f1e38"/></linearGradient>
+    <linearGradient id="canTP" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#c8c8c8"/><stop offset="30%" stop-color="#f0f0f0"/><stop offset="55%" stop-color="#fff"/><stop offset="100%" stop-color="#b0b0b0"/></linearGradient>
+    <filter id="sTP"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/></filter>
+    <filter id="gTP"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="glowTP" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#e52535" stop-opacity="0.2"/><stop offset="100%" stop-color="#e52535" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="280" height="240" fill="url(#bgTP)" rx="12"/>
+  <ellipse cx="140" cy="212" rx="90" ry="14" fill="url(#glowTP)" filter="url(#gTP)"/>
+  <g filter="url(#sTP)">
+    <!-- Left can -->
+    <rect x="62" y="30" width="68" height="175" rx="6" fill="url(#canTP)"/>
+    <ellipse cx="96" cy="30" rx="34" ry="6" fill="#d8d8d8"/>
+    <ellipse cx="96" cy="205" rx="34" ry="5" fill="#c0c0c0"/>
+    <rect x="82" y="14" width="28" height="20" rx="4" fill="#d0d0d0"/>
+    <path d="M110 22 L128 18 L126 24 L110 26Z" fill="#bbb"/>
+    <circle cx="96" cy="22" r="4" fill="#999"/>
+    <rect x="66" y="52" width="60" height="130" rx="3" fill="#fff"/>
+    <rect x="66" y="52" width="60" height="24" fill="#e52535" rx="3"/>
+    <rect x="66" y="70" width="60" height="6" fill="#e52535"/>
+    <text x="96" y="69" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="10" fill="#fff">EMERGENCY</text>
+    <text x="96" y="92" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-style="italic" font-size="7" fill="#1a6fc4">PURE DEFENSE</text>
+    <text x="96" y="115" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="12" fill="#e52535">FIRST AID</text>
+    <text x="96" y="130" text-anchor="middle" font-family="Arial,sans-serif" font-size="5" fill="#666">STERILE WASH</text>
+    <text x="96" y="172" text-anchor="middle" font-family="Arial,sans-serif" font-size="5.5" fill="#999">7 Fl. Oz.</text>
+    <rect x="68" y="52" width="8" height="130" rx="3" fill="rgba(255,255,255,0.12)"/>
+    <!-- Right can (slightly offset) -->
+    <rect x="150" y="30" width="68" height="175" rx="6" fill="url(#canTP)"/>
+    <ellipse cx="184" cy="30" rx="34" ry="6" fill="#d8d8d8"/>
+    <ellipse cx="184" cy="205" rx="34" ry="5" fill="#c0c0c0"/>
+    <rect x="170" y="14" width="28" height="20" rx="4" fill="#d0d0d0"/>
+    <path d="M198 22 L216 18 L214 24 L198 26Z" fill="#bbb"/>
+    <circle cx="184" cy="22" r="4" fill="#999"/>
+    <rect x="154" y="52" width="60" height="130" rx="3" fill="#fff"/>
+    <rect x="154" y="52" width="60" height="24" fill="#e52535" rx="3"/>
+    <rect x="154" y="70" width="60" height="6" fill="#e52535"/>
+    <text x="184" y="69" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="10" fill="#fff">EMERGENCY</text>
+    <text x="184" y="92" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-style="italic" font-size="7" fill="#1a6fc4">PURE DEFENSE</text>
+    <text x="184" y="115" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="12" fill="#e52535">FIRST AID</text>
+    <text x="184" y="130" text-anchor="middle" font-family="Arial,sans-serif" font-size="5" fill="#666">STERILE WASH</text>
+    <text x="184" y="172" text-anchor="middle" font-family="Arial,sans-serif" font-size="5.5" fill="#999">7 Fl. Oz.</text>
+    <rect x="156" y="52" width="8" height="130" rx="3" fill="rgba(255,255,255,0.12)"/>
+  </g>
+  <rect x="104" y="8" width="72" height="22" rx="11" fill="rgba(229,37,53,0.2)" stroke="#e52535" stroke-width="1"/>
+  <text x="140" y="23" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="9" fill="#e52535">TWIN PACK</text>
+</svg>
