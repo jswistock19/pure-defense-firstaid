@@ -81,3 +81,23 @@ window.addEventListener('scroll', () => {
   }
   lastScroll = scrollY;
 }, { passive: true });
+
+
+// ===== Sticky Mobile CTA Bar =====
+const stickyCta = document.getElementById('stickyCta');
+const heroSection = document.getElementById('hero');
+
+if (stickyCta && heroSection) {
+  const stickyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // Show sticky CTA when hero is NOT visible (scrolled past)
+      if (!entry.isIntersecting) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px' });
+
+  stickyObserver.observe(heroSection);
+}
