@@ -46,6 +46,10 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
+      <button class="cart-icon-btn" id="cartIconBtn" aria-label="Open cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-badge" id="cartBadge"></span>
+      </button>
       <a href="#configurator" class="btn btn-primary btn-sm">Build Your Kit</a>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -224,7 +228,7 @@
     <!-- Category: Units -->
     <h3 class="category-title">Individual Units</h3>
     <div class="product-grid">
-      <div class="product-card">
+      <div class="product-card" data-product-id="80001">
         <div class="product-img-wrap">
           <img src="./assets/img-1oz-can.png" alt="Pure Defense 1oz" loading="lazy">
         </div>
@@ -233,9 +237,10 @@
           <h4 class="product-name">Pure Defense 1oz</h4>
           <p class="product-desc">Push button compact. Perfect for personal carry, purses, and glove boxes.</p>
           <div class="product-price">$2.35</div>
+          <button class="btn-add-cart" data-product-id="80001">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="80003">
         <div class="product-img-wrap">
           <img src="./assets/img-3oz-can.png" alt="Pure Defense 3oz Trigger" loading="lazy">
         </div>
@@ -244,9 +249,10 @@
           <h4 class="product-name">Pure Defense 3oz Trigger</h4>
           <p class="product-desc">Precision trigger spray for targeted application on wounds and burns.</p>
           <div class="product-price">$3.29</div>
+          <button class="btn-add-cart" data-product-id="80003">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="80033">
         <div class="product-img-wrap">
           <img src="./assets/img-3oz-can.png" alt="Pure Defense 3oz Push Button" loading="lazy">
         </div>
@@ -255,9 +261,10 @@
           <h4 class="product-name">Pure Defense 3oz Push Button</h4>
           <p class="product-desc">Push-button aerosol for quick, even coverage. Ideal for first aid kits.</p>
           <div class="product-price">$3.29</div>
+          <button class="btn-add-cart" data-product-id="80033">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="80007">
         <div class="product-img-wrap">
           <img src="./assets/img-7oz-can.png" alt="Pure Defense 7oz Trigger" loading="lazy">
         </div>
@@ -266,6 +273,7 @@
           <h4 class="product-name">Pure Defense 7oz Trigger</h4>
           <p class="product-desc">Full-size trigger spray. The workhorse for clinics, vehicles, and job sites.</p>
           <div class="product-price">$3.95</div>
+          <button class="btn-add-cart" data-product-id="80007">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -273,7 +281,7 @@
     <!-- Category: Cases -->
     <h3 class="category-title">Bulk Cases</h3>
     <div class="product-grid">
-      <div class="product-card featured">
+      <div class="product-card featured" data-product-id="81311">
         <span class="product-badge">Best Value</span>
         <div class="product-img-wrap">
           <img src="./assets/img-bulk-case.png" alt="Pure Defense 1oz Case" loading="lazy">
@@ -283,9 +291,10 @@
           <h4 class="product-name">1oz Case — 344 Units</h4>
           <p class="product-desc">Full case of 344 cans. $2.35/unit. Ideal for retail distribution and resale.</p>
           <div class="product-price">$808.40</div>
+          <button class="btn-add-cart" data-product-id="81311">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="83144">
         <div class="product-img-wrap">
           <img src="./assets/img-bulk-case.png" alt="Pure Defense 3oz Case" loading="lazy">
         </div>
@@ -294,9 +303,10 @@
           <h4 class="product-name">3oz Trigger Case — 144 Units</h4>
           <p class="product-desc">$3.29/unit. Stock clinics, job sites, or retail locations.</p>
           <div class="product-price">$473.76</div>
+          <button class="btn-add-cart" data-product-id="83144">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="87070">
         <div class="product-img-wrap">
           <img src="./assets/img-bulk-case.png" alt="Pure Defense 7oz Case" loading="lazy">
         </div>
@@ -305,9 +315,10 @@
           <h4 class="product-name">7oz Trigger Case — 70 Units</h4>
           <p class="product-desc">$3.95/unit. The standard case for professional and institutional buyers.</p>
           <div class="product-price">$276.50</div>
+          <button class="btn-add-cart" data-product-id="87070">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="80207">
         <div class="product-img-wrap">
           <img src="./assets/img-7oz-can.png" alt="Pure Defense 7oz Twin Pack" loading="lazy">
         </div>
@@ -316,6 +327,7 @@
           <h4 class="product-name">7oz Twin Pack</h4>
           <p class="product-desc">Two 7oz trigger cans packaged together for grab-and-go convenience.</p>
           <div class="product-price">$7.90</div>
+          <button class="btn-add-cart" data-product-id="80207">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -323,7 +335,7 @@
     <!-- Category: Dispensers & Stations -->
     <h3 class="category-title">Dispensers &amp; Stations</h3>
     <div class="product-grid">
-      <div class="product-card featured">
+      <div class="product-card featured" data-product-id="2110">
         <span class="product-badge">OSHA Ready</span>
         <div class="product-img-wrap">
           <img src="./assets/img-dispenser.png" alt="Eye Wash Magazine Dispenser" loading="lazy">
@@ -333,9 +345,10 @@
           <h4 class="product-name">Eye Wash Magazine Dispenser</h4>
           <p class="product-desc">Wall-mounted magazine dispenser. Holds multiple 7oz cans for high-traffic areas.</p>
           <div class="product-price">$164.95</div>
+          <button class="btn-add-cart" data-product-id="2110">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="87079">
         <div class="product-img-wrap">
           <img src="./assets/img-twin-station.png" alt="Twin 7oz Station with Mirror" loading="lazy">
         </div>
@@ -344,9 +357,10 @@
           <h4 class="product-name">Twin 7oz Station w/ Mirror</h4>
           <p class="product-desc">Screw-mount twin station with built-in mirror for self-administered eye irrigation.</p>
           <div class="product-price">$24.56</div>
+          <button class="btn-add-cart" data-product-id="87079">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="87085">
         <div class="product-img-wrap">
           <img src="./assets/img-twin-station.png" alt="Twin 7oz Station Adhesive" loading="lazy">
         </div>
@@ -355,9 +369,10 @@
           <h4 class="product-name">Twin 7oz Station — Adhesive</h4>
           <p class="product-desc">Adhesive tape mount. No drilling required. Same twin-can + mirror setup.</p>
           <div class="product-price">$24.56</div>
+          <button class="btn-add-cart" data-product-id="87085">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="87086">
         <div class="product-img-wrap">
           <img src="./assets/img-wall-mount.png" alt="Truck Wall Mount" loading="lazy">
         </div>
@@ -366,6 +381,7 @@
           <h4 class="product-name">Truck / Wall Mount</h4>
           <p class="product-desc">Holds one 7oz can. Mount in vehicles, workshops, or near machinery.</p>
           <div class="product-price">$2.20</div>
+          <button class="btn-add-cart" data-product-id="87086">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -373,7 +389,7 @@
     <!-- Category: Carry Systems -->
     <h3 class="category-title">Carry Bags &amp; Holsters</h3>
     <div class="product-grid">
-      <div class="product-card">
+      <div class="product-card" data-product-id="2098">
         <div class="product-img-wrap">
           <img src="./assets/img-carry-bag.png" alt="12-Pack Carry Bag" loading="lazy">
         </div>
@@ -382,9 +398,10 @@
           <h4 class="product-name">12-Pack Carry Bag</h4>
           <p class="product-desc">Holds 12 x 7oz cans. Durable carry bag for field medics and first responders. Cans sold separately.</p>
           <div class="product-price">$28.00</div>
+          <button class="btn-add-cart" data-product-id="2098">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="2097">
         <div class="product-img-wrap">
           <img src="./assets/img-carry-bag.png" alt="15-Pack Carry Bag" loading="lazy">
         </div>
@@ -393,9 +410,10 @@
           <h4 class="product-name">15-Pack Carry Bag</h4>
           <p class="product-desc">Holds 15 x 7oz cans. Extra capacity for teams and mass casualty kits. Cans sold separately.</p>
           <div class="product-price">$29.50</div>
+          <button class="btn-add-cart" data-product-id="2097">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="01095">
         <div class="product-img-wrap">
           <img src="./assets/img-holster.png" alt="3oz Belt Holster" loading="lazy">
         </div>
@@ -404,6 +422,7 @@
           <h4 class="product-name">3oz Belt Holster</h4>
           <p class="product-desc">Black holster for 3oz cans. Clips to duty belts, tactical vests, or tool belts.</p>
           <div class="product-price">$4.62</div>
+          <button class="btn-add-cart" data-product-id="01095">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -411,7 +430,7 @@
     <!-- Category: First Aid Supplies -->
     <h3 class="category-title">First Aid Supplies</h3>
     <div class="product-grid">
-      <div class="product-card featured">
+      <div class="product-card featured" data-product-id="90100">
         <span class="product-badge">Essential</span>
         <div class="product-img-wrap">
           <img src="./assets/img-supplies-pack.png" alt="Wound Care Refill Pack" loading="lazy">
@@ -421,9 +440,10 @@
           <h4 class="product-name">Wound Care Refill Pack</h4>
           <p class="product-desc">Antiseptic wipes (10), antibiotic ointment (6), hydrocortisone cream (4), assorted bandages (20), butterfly closures (6), alcohol prep pads (10), nitrile gloves (4 pair).</p>
           <div class="product-price">$14.95</div>
+          <button class="btn-add-cart" data-product-id="90100">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card featured">
+      <div class="product-card featured" data-product-id="90200">
         <span class="product-badge">Tactical</span>
         <div class="product-img-wrap">
           <img src="./assets/img-trauma-kit.png" alt="Trauma Response Pack" loading="lazy">
@@ -433,9 +453,10 @@
           <h4 class="product-name">Trauma Response Pack</h4>
           <p class="product-desc">CAT-style tourniquet, hemostatic gauze, trauma pad 5x9", cohesive wrap (2), sterile gauze pads (8), EMT shears, emergency blanket.</p>
           <div class="product-price">$34.95</div>
+          <button class="btn-add-cart" data-product-id="90200">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card featured">
+      <div class="product-card featured" data-product-id="90300">
         <span class="product-badge">Life-Saving</span>
         <div class="product-img-wrap">
           <img src="./assets/img-narcan-kit.png" alt="Overdose Response Kit" loading="lazy">
@@ -445,9 +466,10 @@
           <h4 class="product-name">Overdose Response Kit</h4>
           <p class="product-desc">Narcan 4mg nasal spray, fentanyl test strips (2), CPR face shield, N95 mask, ASTM D6978 nitrile gloves (2 pair), penlight, instruction card.</p>
           <div class="product-price">$44.95</div>
+          <button class="btn-add-cart" data-product-id="90300">Add to Cart</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-product-id="90400">
         <div class="product-img-wrap">
           <img src="./assets/img-med-pack.png" alt="OTC Medication Pack" loading="lazy">
         </div>
@@ -456,6 +478,7 @@
           <h4 class="product-name">OTC Medication Pack</h4>
           <p class="product-desc">Ibuprofen (4), acetaminophen (4), aspirin (4), Benadryl (4), hydrocortisone packets (4). Individual dose foil packets for kit restocking.</p>
           <div class="product-price">$9.95</div>
+          <button class="btn-add-cart" data-product-id="90400">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -475,7 +498,7 @@
 
     <div class="kits-grid">
       <!-- Base Kit -->
-      <div class="kit-card">
+      <div class="kit-card" data-product-id="KIT-BASE">
         <span class="kit-badge">STARTER</span>
         <h3 class="kit-name">Base Kit</h3>
         <div class="kit-price">$150</div>
@@ -494,11 +517,11 @@
           <li><span class="check">✓</span> Emergency instruction card</li>
           <li><span class="check">✓</span> Waterproof hard case</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost btn-full">Add to Cart</a>
+        <button class="btn btn-ghost btn-full btn-add-cart" data-product-id="KIT-BASE">Add to Cart</button>
       </div>
 
       <!-- Pro Kit -->
-      <div class="kit-card kit-featured">
+      <div class="kit-card kit-featured" data-product-id="KIT-PRO">
         <span class="kit-badge kit-badge-featured">MOST POPULAR</span>
         <h3 class="kit-name">Pro Kit</h3>
         <div class="kit-price">$200</div>
@@ -523,11 +546,11 @@
           <li><span class="check">✓</span> Emergency instruction card</li>
           <li><span class="check">✓</span> Waterproof hard case</li>
         </ul>
-        <a href="#contact" class="btn btn-primary btn-full">Add to Cart</a>
+        <button class="btn btn-primary btn-full btn-add-cart" data-product-id="KIT-PRO">Add to Cart</button>
       </div>
 
       <!-- Tactical Kit -->
-      <div class="kit-card">
+      <div class="kit-card" data-product-id="KIT-TAC">
         <span class="kit-badge">TACTICAL</span>
         <h3 class="kit-name">Tactical Kit</h3>
         <div class="kit-price">$250</div>
@@ -554,11 +577,11 @@
           <li><span class="check">✓</span> Poison Control sticker</li>
           <li><span class="check">✓</span> MOLLE-compatible tactical bag</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost btn-full">Add to Cart</a>
+        <button class="btn btn-ghost btn-full btn-add-cart" data-product-id="KIT-TAC">Add to Cart</button>
       </div>
 
       <!-- Fully Loaded Kit -->
-      <div class="kit-card">
+      <div class="kit-card" data-product-id="KIT-FULL">
         <span class="kit-badge">PREMIUM</span>
         <h3 class="kit-name">Fully Loaded Kit</h3>
         <div class="kit-price">$349</div>
@@ -589,7 +612,7 @@
           <li><span class="check">✓</span> Poison Control sticker</li>
           <li><span class="check">✓</span> Premium waterproof hard case</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost btn-full">Add to Cart</a>
+        <button class="btn btn-ghost btn-full btn-add-cart" data-product-id="KIT-FULL">Add to Cart</button>
       </div>
     </div>
   </div>
@@ -677,7 +700,7 @@
 
     <div class="eyewash-grid">
       <!-- Personal Station -->
-      <div class="eyewash-card">
+      <div class="eyewash-card" data-product-id="EWS-PERSONAL">
         <h4 class="eyewash-name">Personal Station</h4>
         <div class="eyewash-price">$75</div>
         <ul class="eyewash-features">
@@ -685,11 +708,11 @@
           <li>1x Pure Defense 7oz can</li>
         </ul>
         <span class="eyewash-for">For: offices, small shops</span>
-        <a href="#contact" class="btn btn-ghost btn-full btn-sm">Request Quote</a>
+        <button class="btn btn-ghost btn-full btn-sm btn-add-cart" data-product-id="EWS-PERSONAL">Add to Cart</button>
       </div>
 
       <!-- Twin Station -->
-      <div class="eyewash-card">
+      <div class="eyewash-card" data-product-id="EWS-TWIN">
         <h4 class="eyewash-name">Twin Station</h4>
         <div class="eyewash-price">$150</div>
         <ul class="eyewash-features">
@@ -697,11 +720,11 @@
           <li>2x Pure Defense 7oz cans</li>
         </ul>
         <span class="eyewash-for">For: workshops, classrooms</span>
-        <a href="#contact" class="btn btn-ghost btn-full btn-sm">Request Quote</a>
+        <button class="btn btn-ghost btn-full btn-sm btn-add-cart" data-product-id="EWS-TWIN">Add to Cart</button>
       </div>
 
       <!-- Magazine Dispenser -->
-      <div class="eyewash-card">
+      <div class="eyewash-card" data-product-id="EWS-MAG">
         <h4 class="eyewash-name">Magazine Dispenser</h4>
         <div class="eyewash-price">$500</div>
         <ul class="eyewash-features">
@@ -709,7 +732,7 @@
           <li>Holds 6x Pure Defense 7oz cans</li>
         </ul>
         <span class="eyewash-for">For: manufacturing floors, labs</span>
-        <a href="#contact" class="btn btn-ghost btn-full btn-sm">Request Quote</a>
+        <button class="btn btn-ghost btn-full btn-sm btn-add-cart" data-product-id="EWS-MAG">Add to Cart</button>
       </div>
 
       <!-- Industrial Station -->
@@ -1010,6 +1033,175 @@
 <div class="sticky-cta" id="stickyCta">
   <a href="#configurator" class="btn btn-primary btn-full">Build Your Kit</a>
 </div>
+
+<!-- ===== CART OVERLAY & DRAWER ===== -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3>Your Cart</h3>
+    <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <!-- Cart items rendered by JS -->
+  </div>
+  <div class="cart-empty" id="cartEmpty">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    <p>Your cart is empty</p>
+    <button class="btn btn-ghost btn-sm" id="continueShopping">Continue Shopping</button>
+  </div>
+  <div class="cart-summary" id="cartSummary">
+    <div class="cart-summary-row">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">$0.00</span>
+    </div>
+    <div class="cart-summary-row cart-shipping-row">
+      <span>Shipping</span>
+      <span id="cartShipping">$9.95 flat rate</span>
+    </div>
+    <div class="cart-summary-row cart-total-row">
+      <span>Total</span>
+      <span id="cartTotal">$0.00</span>
+    </div>
+    <button class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout</button>
+  </div>
+</aside>
+
+<!-- ===== CHECKOUT OVERLAY ===== -->
+<div class="checkout-overlay" id="checkoutOverlay">
+  <div class="checkout-container">
+    <div class="checkout-header">
+      <h2>Checkout</h2>
+      <div class="checkout-steps-indicator" id="checkoutStepsIndicator">
+        <span class="step-dot active" data-step="1">1</span>
+        <span class="step-line"></span>
+        <span class="step-dot" data-step="2">2</span>
+        <span class="step-line"></span>
+        <span class="step-dot" data-step="3">3</span>
+        <span class="step-line"></span>
+        <span class="step-dot" data-step="4">4</span>
+      </div>
+      <button class="checkout-close-btn" id="checkoutCloseBtn" aria-label="Close checkout">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Step 1: Shipping -->
+    <div class="checkout-step active" id="checkoutStep1">
+      <h3>Shipping Information</h3>
+      <form class="checkout-form" id="shippingForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="shipName">Full Name *</label>
+            <input type="text" id="shipName" required placeholder="John Doe">
+            <span class="form-error" id="shipNameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="shipEmail">Email Address *</label>
+            <input type="email" id="shipEmail" required placeholder="john@example.com">
+            <span class="form-error" id="shipEmailError"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="shipPhone">Phone Number *</label>
+          <input type="tel" id="shipPhone" required placeholder="(555) 123-4567">
+          <span class="form-error" id="shipPhoneError"></span>
+        </div>
+        <div class="form-group">
+          <label for="shipAddress1">Address Line 1 *</label>
+          <input type="text" id="shipAddress1" required placeholder="123 Main Street">
+          <span class="form-error" id="shipAddress1Error"></span>
+        </div>
+        <div class="form-group">
+          <label for="shipAddress2">Address Line 2</label>
+          <input type="text" id="shipAddress2" placeholder="Apt, Suite, Unit (optional)">
+        </div>
+        <div class="form-row form-row-3">
+          <div class="form-group">
+            <label for="shipCity">City *</label>
+            <input type="text" id="shipCity" required placeholder="City">
+            <span class="form-error" id="shipCityError"></span>
+          </div>
+          <div class="form-group">
+            <label for="shipState">State *</label>
+            <select id="shipState" required>
+              <option value="">Select...</option>
+              <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option>
+              <option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option>
+              <option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option>
+              <option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option>
+              <option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option>
+              <option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="DC">District of Columbia</option>
+            </select>
+            <span class="form-error" id="shipStateError"></span>
+          </div>
+          <div class="form-group">
+            <label for="shipZip">ZIP Code *</label>
+            <input type="text" id="shipZip" required placeholder="12345" maxlength="10">
+            <span class="form-error" id="shipZipError"></span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Continue to Review</button>
+      </form>
+    </div>
+
+    <!-- Step 2: Order Review -->
+    <div class="checkout-step" id="checkoutStep2">
+      <h3>Order Review</h3>
+      <div class="review-items" id="reviewItems"></div>
+      <div class="review-address" id="reviewAddress"></div>
+      <div class="review-totals" id="reviewTotals"></div>
+      <div class="review-actions">
+        <button class="btn btn-ghost" id="editShippingBtn">Edit Shipping</button>
+        <button class="btn btn-ghost" id="editCartBtn">Edit Cart</button>
+        <button class="btn btn-primary" id="continueToPaymentBtn">Continue to Payment</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Payment Placeholder -->
+    <div class="checkout-step" id="checkoutStep3">
+      <h3>Payment</h3>
+      <div class="payment-placeholder">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+        </svg>
+        <p class="payment-message">Payment processing is being set up. To complete your order, please contact us directly.</p>
+        <div class="payment-total">
+          <span>Order Total:</span>
+          <strong id="paymentTotal">$0.00</strong>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-full" id="placeOrderBtn">Place Order</button>
+    </div>
+
+    <!-- Step 4: Order Confirmation -->
+    <div class="checkout-step" id="checkoutStep4">
+      <div class="order-confirmation">
+        <div class="confirmation-check">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Thank you for your order!</h3>
+        <p class="order-number" id="orderNumber"></p>
+        <div class="confirmation-summary" id="confirmationSummary"></div>
+        <div class="confirmation-address" id="confirmationAddress"></div>
+        <p class="confirmation-note">We'll contact you to arrange payment and shipping.</p>
+        <p class="confirmation-contact">Contact: <a href="mailto:jswistock19@gmail.com">jswistock19@gmail.com</a></p>
+        <button class="btn btn-primary btn-full" id="continueShoppingBtn">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TOAST CONTAINER ===== -->
+<div class="toast-container" id="toastContainer"></div>
 
 <script src="./app.js" defer></script>
 </body>
