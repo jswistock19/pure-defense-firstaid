@@ -664,25 +664,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealSections.forEach(section => revealObserver.observe(section));
 
 
-// Smooth Scroll for Nav (skip cart/checkout-related buttons)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    // Don't interfere with add-to-cart or other store buttons
-    if (this.closest('.btn-add-cart') || this.closest('.cart-drawer') || this.closest('.checkout-overlay')) return;
-
-    const href = this.getAttribute('href');
-    if (href === '#') {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
+// Smooth Scroll for Nav - handled in the IIFE below for multi-page support
 
 
 // Nav Background on Scroll
@@ -700,17 +682,28 @@ window.addEventListener('scroll', () => {
 // Sticky Mobile CTA Bar
 const stickyCta = document.getElementById('stickyCta');
 const heroSection = document.getElementById('hero');
-if (stickyCta && heroSection) {
-  const stickyObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
+if (stickyCta) {
+  if (heroSection) {
+    const stickyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          stickyCta.classList.add('visible');
+        } else {
+          stickyCta.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px' });
+    stickyObserver.observe(heroSection);
+  } else {
+    // Non-hero pages — show sticky CTA after scrolling
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
         stickyCta.classList.add('visible');
       } else {
         stickyCta.classList.remove('visible');
       }
-    });
-  }, { threshold: 0, rootMargin: '0px' });
-  stickyObserver.observe(heroSection);
+    }, { passive: true });
+  }
 }
 
 
@@ -752,7 +745,8 @@ initStore();
   function handleAnnouncementScroll() {
     if (announcementDismissed) return;
     const currentScrollY = window.scrollY;
-    const heroHeight = document.getElementById('hero')?.offsetHeight || 600;
+    const heroEl = document.getElementById('hero');
+    const heroHeight = heroEl ? heroEl.offsetHeight : 300;
 
     if (currentScrollY > heroHeight) {
       announcementBar.classList.add('hidden');
@@ -934,14 +928,16 @@ initStore();
   });
 
 
-  // ===== ACTIVE NAV STATE (IntersectionObserver) =====
-  const navSectionMap = [
-    { navSelector: '[data-dropdown="shop"]',      sections: ['products'] },
-    { navSelector: '[data-dropdown="kits"]',       sections: ['kits', 'configurator'] },
-    { navSelector: '.nav-link-single[href="#eyewash"]', sections: ['eyewash'] },
-    { navSelector: '[data-dropdown="solutions"]',  sections: ['wholesale'] },
-    { navSelector: '[data-dropdown="about"]',      sections: ['science', 'faq', 'contact'] },
-  ];
+  // ===== ACTIVE NAV STATE (URL-based for multi-page) =====
+  const pageNavMap = {
+    'shop':      '[data-dropdown="shop"]',
+    'kits':      '[data-dropdown="kits"]',
+    'eyewash':   '.nav-link-single',
+    'solutions': '[data-dropdown="solutions"]',
+    'about':     '[data-dropdown="about"]',
+    'faq':       '[data-dropdown="about"]',
+    'contact':   '[data-dropdown="about"]',
+  };
 
   let currentActiveNav = null;
 
@@ -960,48 +956,63 @@ initStore();
     }
   }
 
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        for (const mapping of navSectionMap) {
-          if (mapping.sections.includes(id)) {
-            setActiveNav(mapping.navSelector);
-            return;
-          }
-        }
-      }
-    });
-  }, {
-    threshold: 0.15,
-    rootMargin: '-100px 0px -40% 0px'
-  });
+  // Determine active nav from current page
+  const currentPage = document.body.getAttribute('data-page') || '';
+  if (currentPage && pageNavMap[currentPage]) {
+    setActiveNav(pageNavMap[currentPage]);
+  }
 
-  // Observe all mapped sections
-  navSectionMap.forEach(mapping => {
-    mapping.sections.forEach(sectionId => {
-      const el = document.getElementById(sectionId);
-      if (el) sectionObserver.observe(el);
+  // For pages with multiple sections (like shop.html), use IntersectionObserver within that page
+  if (currentPage === 'shop') {
+    const categoryLinks = document.querySelectorAll('.category-subnav-link');
+    const categoryIds = ['individual-units', 'bulk-cases', 'dispensers-stations', 'carry-bags-holsters', 'first-aid-supplies'];
+
+    const catObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          categoryLinks.forEach(l => l.classList.remove('active'));
+          const activeLink = document.querySelector('.category-subnav-link[href="#' + entry.target.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '-120px 0px -50% 0px'
     });
-  });
+
+    categoryIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) catObserver.observe(el);
+    });
+  }
 
 
   // ===== BACK TO TOP BUTTON =====
   const backToTop = document.getElementById('backToTop');
   const heroEl = document.getElementById('hero');
 
-  if (backToTop && heroEl) {
-    const backToTopObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) {
+  if (backToTop) {
+    if (heroEl) {
+      const backToTopObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            backToTop.classList.add('visible');
+          } else {
+            backToTop.classList.remove('visible');
+          }
+        });
+      }, { threshold: 0 });
+      backToTopObserver.observe(heroEl);
+    } else {
+      // No hero section — show back-to-top based on scroll distance
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
           backToTop.classList.add('visible');
         } else {
           backToTop.classList.remove('visible');
         }
-      });
-    }, { threshold: 0 });
-
-    backToTopObserver.observe(heroEl);
+      }, { passive: true });
+    }
 
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1009,9 +1020,12 @@ initStore();
   }
 
 
-  // ===== RE-BIND SMOOTH SCROLL for new nav links =====
-  document.querySelectorAll('.nav-links a[href^="#"], .mega-dropdown a[href^="#"], .mega-footer-link[href^="#"]').forEach(anchor => {
+  // ===== SMOOTH SCROLL for same-page hash links =====
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+      // Don't interfere with add-to-cart or other store buttons
+      if (this.closest('.btn-add-cart') || this.closest('.cart-drawer') || this.closest('.checkout-overlay')) return;
+
       const href = this.getAttribute('href');
       if (href === '#') {
         e.preventDefault();
@@ -1025,5 +1039,15 @@ initStore();
       }
     });
   });
+
+  // Handle hash in URL on page load (e.g., kits.html#configurator)
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+  }
 
 })();
