@@ -5,53 +5,53 @@
 // ===== PRODUCT CATALOG =====
 const PRODUCTS = {
   // Individual Units
-  '80001':  { id: '80001',  name: 'Pure Defense 1oz',               price: 2.35,    image: './assets/img-1oz-can.png',       category: 'Individual Units',       description: 'Push button compact. Perfect for personal carry.' },
-  '80003':  { id: '80003',  name: 'Pure Defense 3oz Trigger',       price: 3.29,    image: './assets/img-3oz-can.png',       category: 'Individual Units',       description: 'Precision trigger spray for targeted application.' },
-  '80033':  { id: '80033',  name: 'Pure Defense 3oz Push Button',   price: 3.29,    image: './assets/img-3oz-can.png',       category: 'Individual Units',       description: 'Push-button aerosol for quick, even coverage.' },
-  '80007':  { id: '80007',  name: 'Pure Defense 7oz Trigger',       price: 3.95,    image: './assets/img-7oz-can.png',       category: 'Individual Units',       description: 'Full-size trigger spray. The workhorse.' },
+  '80001':  { id: '80001',  name: 'Pure Defense 1oz',               price: 8.95,    image: './assets/img-1oz-can.png',       category: 'Individual Units',       description: 'Push button compact. Perfect for personal carry.' },
+  '80003':  { id: '80003',  name: 'Pure Defense 3oz Trigger',       price: 12.95,    image: './assets/img-3oz-can.png',       category: 'Individual Units',       description: 'Precision trigger spray for targeted application.' },
+  '80033':  { id: '80033',  name: 'Pure Defense 3oz Push Button',   price: 12.95,    image: './assets/img-3oz-can.png',       category: 'Individual Units',       description: 'Push-button aerosol for quick, even coverage.' },
+  '80007':  { id: '80007',  name: 'Pure Defense 7oz Trigger',       price: 14.95,    image: './assets/img-7oz-can.png',       category: 'Individual Units',       description: 'Full-size trigger spray. The workhorse.' },
 
   // Bulk Cases
-  '81311':  { id: '81311',  name: '1oz Case — 344 Units',           price: 808.40,  image: './assets/img-bulk-case.png',     category: 'Bulk Cases',             description: 'Full case of 344 cans. $2.35/unit.' },
-  '83144':  { id: '83144',  name: '3oz Trigger Case — 144 Units',   price: 473.76,  image: './assets/img-bulk-case.png',     category: 'Bulk Cases',             description: '$3.29/unit. Stock clinics, job sites, or retail.' },
-  '87070':  { id: '87070',  name: '7oz Trigger Case — 70 Units',    price: 276.50,  image: './assets/img-bulk-case.png',     category: 'Bulk Cases',             description: '$3.95/unit. Standard professional case.' },
-  '80207':  { id: '80207',  name: '7oz Twin Pack',                  price: 7.90,    image: './assets/img-7oz-can.png',       category: 'Bulk Cases',             description: 'Two 7oz trigger cans packaged together.' },
+  '81311':  { id: '81311',  name: '1oz Case — 344 Units',           price: 2399.00,  image: './assets/img-bulk-case.png',     category: 'Bulk Cases',             description: 'Full case of 344 cans. $6.99/unit.' },
+  '83144':  { id: '83144',  name: '3oz Trigger Case — 144 Units',   price: 1499.00,  image: './assets/img-bulk-case.png',     category: 'Bulk Cases',             description: '$10.41/unit. Stock clinics, job sites, or retail.' },
+  '87070':  { id: '87070',  name: '7oz Trigger Case — 70 Units',    price: 849.00,  image: './assets/img-bulk-case.png',     category: 'Bulk Cases',             description: '$12.13/unit. Standard professional case.' },
+  '80207':  { id: '80207',  name: '7oz Twin Pack',                  price: 24.95,    image: './assets/img-7oz-can.png',       category: 'Bulk Cases',             description: 'Two 7oz trigger cans packaged together.' },
 
   // Dispensers & Stations
-  '2110':   { id: '2110',   name: 'Eye Wash Magazine Dispenser',    price: 164.95,  image: './assets/img-dispenser.png',     category: 'Dispensers & Stations',  description: 'Wall-mounted magazine dispenser for high-traffic areas.' },
-  '87079':  { id: '87079',  name: 'Twin 7oz Station w/ Mirror',     price: 24.56,   image: './assets/img-twin-station.png',  category: 'Dispensers & Stations',  description: 'Screw-mount twin station with built-in mirror.' },
-  '87085':  { id: '87085',  name: 'Twin 7oz Station — Adhesive',    price: 24.56,   image: './assets/img-twin-station.png',  category: 'Dispensers & Stations',  description: 'Adhesive tape mount. No drilling required.' },
-  '87086':  { id: '87086',  name: 'Truck / Wall Mount',             price: 2.20,    image: './assets/img-wall-mount.png',    category: 'Dispensers & Stations',  description: 'Holds one 7oz can. Mount in vehicles or workshops.' },
+  '2110':   { id: '2110',   name: 'Eye Wash Magazine Dispenser',    price: 349.95,  image: './assets/img-dispenser.png',     category: 'Dispensers & Stations',  description: 'Wall-mounted magazine dispenser for high-traffic areas.' },
+  '87079':  { id: '87079',  name: 'Twin 7oz Station w/ Mirror',     price: 59.95,   image: './assets/img-twin-station.png',  category: 'Dispensers & Stations',  description: 'Screw-mount twin station with built-in mirror.' },
+  '87085':  { id: '87085',  name: 'Twin 7oz Station — Adhesive',    price: 59.95,   image: './assets/img-twin-station.png',  category: 'Dispensers & Stations',  description: 'Adhesive tape mount. No drilling required.' },
+  '87086':  { id: '87086',  name: 'Truck / Wall Mount',             price: 12.95,    image: './assets/img-wall-mount.png',    category: 'Dispensers & Stations',  description: 'Holds one 7oz can. Mount in vehicles or workshops.' },
 
   // Carry Bags & Holsters
-  '2098':   { id: '2098',   name: '12-Pack Carry Bag',              price: 28.00,   image: './assets/img-carry-bag.png',     category: 'Carry Bags & Holsters',  description: 'Holds 12 x 7oz cans. For field medics.' },
-  '2097':   { id: '2097',   name: '15-Pack Carry Bag',              price: 29.50,   image: './assets/img-carry-bag.png',     category: 'Carry Bags & Holsters',  description: 'Holds 15 x 7oz cans. Extra capacity.' },
-  '01095':  { id: '01095',  name: '3oz Belt Holster',               price: 4.62,    image: './assets/img-holster.png',       category: 'Carry Bags & Holsters',  description: 'Black holster for 3oz cans. Clips to duty belts.' },
+  '2098':   { id: '2098',   name: '12-Pack Carry Bag',              price: 64.95,   image: './assets/img-carry-bag.png',     category: 'Carry Bags & Holsters',  description: 'Holds 12 x 7oz cans. For field medics.' },
+  '2097':   { id: '2097',   name: '15-Pack Carry Bag',              price: 74.95,   image: './assets/img-carry-bag.png',     category: 'Carry Bags & Holsters',  description: 'Holds 15 x 7oz cans. Extra capacity.' },
+  '01095':  { id: '01095',  name: '3oz Belt Holster',               price: 18.95,    image: './assets/img-holster.png',       category: 'Carry Bags & Holsters',  description: 'Black holster for 3oz cans. Clips to duty belts.' },
 
   // First Aid Supplies
-  '90100':  { id: '90100',  name: 'Wound Care Refill Pack',         price: 14.95,   image: './assets/img-supplies-pack.png', category: 'First Aid Supplies',     description: 'Antiseptic wipes, ointment, bandages, gloves.' },
-  '90200':  { id: '90200',  name: 'Trauma Response Pack',           price: 34.95,   image: './assets/img-trauma-kit.png',    category: 'First Aid Supplies',     description: 'Tourniquet, hemostatic gauze, trauma pad, shears.' },
-  '90300':  { id: '90300',  name: 'Overdose Response Kit',          price: 44.95,   image: './assets/img-narcan-kit.png',    category: 'First Aid Supplies',     description: 'Narcan 4mg, fentanyl strips, CPR shield.' },
-  '90400':  { id: '90400',  name: 'OTC Medication Pack',            price: 9.95,    image: './assets/img-med-pack.png',      category: 'First Aid Supplies',     description: 'Ibuprofen, acetaminophen, aspirin, Benadryl packets.' },
+  '90100':  { id: '90100',  name: 'Wound Care Refill Pack',         price: 29.95,   image: './assets/img-supplies-pack.png', category: 'First Aid Supplies',     description: 'Antiseptic wipes, ointment, bandages, gloves.' },
+  '90200':  { id: '90200',  name: 'Trauma Response Pack',           price: 79.95,   image: './assets/img-trauma-kit.png',    category: 'First Aid Supplies',     description: 'Tourniquet, hemostatic gauze, trauma pad, shears.' },
+  '90300':  { id: '90300',  name: 'Overdose Response Kit',          price: 89.95,   image: './assets/img-narcan-kit.png',    category: 'First Aid Supplies',     description: 'Narcan 4mg, fentanyl strips, CPR shield.' },
+  '90400':  { id: '90400',  name: 'OTC Medication Pack',            price: 19.95,    image: './assets/img-med-pack.png',      category: 'First Aid Supplies',     description: 'Ibuprofen, acetaminophen, aspirin, Benadryl packets.' },
 
   // First Aid Kits
-  'KIT-BASE': { id: 'KIT-BASE', name: 'Base Kit',                   price: 150.00,  image: './assets/img-first-aid-kit.png', category: 'First Aid Kits',         description: 'Starter kit with 2x 7oz cans and essentials.' },
-  'KIT-PRO':  { id: 'KIT-PRO',  name: 'Pro Kit',                    price: 200.00,  image: './assets/img-first-aid-kit.png', category: 'First Aid Kits',         description: 'Professional kit with 4x 7oz cans and expanded supplies.' },
-  'KIT-TAC':  { id: 'KIT-TAC',  name: 'Tactical Kit',               price: 250.00,  image: './assets/img-first-aid-kit.png', category: 'First Aid Kits',         description: 'Tactical kit with tourniquet, hemostatic gauze, MOLLE bag.' },
-  'KIT-FULL': { id: 'KIT-FULL', name: 'Fully Loaded Kit',           price: 349.00,  image: './assets/img-first-aid-kit.png', category: 'First Aid Kits',         description: 'Premium kit with 8x cans, Narcan, and full supplies.' },
+  'KIT-BASE': { id: 'KIT-BASE', name: 'Base Kit',                   price: 199.00,  image: './assets/img-first-aid-kit.png', category: 'First Aid Kits',         description: 'Starter kit with 2x 7oz cans and essentials.' },
+  'KIT-PRO':  { id: 'KIT-PRO',  name: 'Pro Kit',                    price: 299.00,  image: './assets/img-first-aid-kit.png', category: 'First Aid Kits',         description: 'Professional kit with 4x 7oz cans and expanded supplies.' },
+  'KIT-TAC':  { id: 'KIT-TAC',  name: 'Tactical Kit',               price: 399.00,  image: './assets/img-first-aid-kit.png', category: 'First Aid Kits',         description: 'Tactical kit with tourniquet, hemostatic gauze, MOLLE bag.' },
+  'KIT-FULL': { id: 'KIT-FULL', name: 'Fully Loaded Kit',           price: 499.00,  image: './assets/img-first-aid-kit.png', category: 'First Aid Kits',         description: 'Premium kit with 8x cans, Narcan, and full supplies.' },
 
   // Eye Wash Station Tiers (purchasable ones)
-  'EWS-PERSONAL': { id: 'EWS-PERSONAL', name: 'Personal Station',   price: 75.00,   image: './assets/img-eye-wash-station.png', category: 'Eye Wash Stations',  description: 'Single wall-mount bracket with 1x 7oz can.' },
-  'EWS-TWIN':     { id: 'EWS-TWIN',     name: 'Twin Station',       price: 150.00,  image: './assets/img-twin-station.png',     category: 'Eye Wash Stations',  description: 'Twin bracket with mirror and 2x 7oz cans.' },
-  'EWS-MAG':      { id: 'EWS-MAG',      name: 'Magazine Dispenser', price: 500.00,  image: './assets/img-dispenser.png',        category: 'Eye Wash Stations',  description: 'Wall-mounted rack holding 6x 7oz cans.' },
+  'EWS-PERSONAL': { id: 'EWS-PERSONAL', name: 'Personal Station',   price: 149.00,   image: './assets/img-eye-wash-station.png', category: 'Eye Wash Stations',  description: 'Single wall-mount bracket with 1x 7oz can.' },
+  'EWS-TWIN':     { id: 'EWS-TWIN',     name: 'Twin Station',       price: 249.00,  image: './assets/img-twin-station.png',     category: 'Eye Wash Stations',  description: 'Twin bracket with mirror and 2x 7oz cans.' },
+  'EWS-MAG':      { id: 'EWS-MAG',      name: 'Magazine Dispenser', price: 749.00,  image: './assets/img-dispenser.png',        category: 'Eye Wash Stations',  description: 'Wall-mounted rack holding 6x 7oz cans.' },
 
   // Quote-only items (not purchasable via cart - kept for reference)
-  'EWS-IND':   { id: 'EWS-IND',   name: 'Industrial Station',      price: 2500.00, image: './assets/img-eye-wash-station.png', category: 'Eye Wash Stations',  description: 'Full cabinet with signage and 12-can capacity.' },
-  'EWS-ENT':   { id: 'EWS-ENT',   name: 'Enterprise System',       price: 7500.00, image: './assets/img-eye-wash-station.png', category: 'Eye Wash Stations',  description: 'Multi-point installation with 4 stations.' },
+  'EWS-IND':   { id: 'EWS-IND',   name: 'Industrial Station',      price: 3995.00, image: './assets/img-eye-wash-station.png', category: 'Eye Wash Stations',  description: 'Full cabinet with signage and 12-can capacity.' },
+  'EWS-ENT':   { id: 'EWS-ENT',   name: 'Enterprise System',       price: 12500.00, image: './assets/img-eye-wash-station.png', category: 'Eye Wash Stations',  description: 'Multi-point installation with 4 stations.' },
 
   // Institutional Packages (quote only - kept for reference)
-  'INST-START': { id: 'INST-START', name: 'Starter Package',        price: 200.00,  image: './assets/img-bulk-case.png',  category: 'Institutional', description: '10 cans, 1 wall station, training guide.' },
-  'INST-PRO':   { id: 'INST-PRO',   name: 'Professional Package',   price: 800.00,  image: './assets/img-bulk-case.png',  category: 'Institutional', description: '50 cans, 3 stations, carry bag, training.' },
-  'INST-ENT':   { id: 'INST-ENT',   name: 'Enterprise Package',     price: 2500.00, image: './assets/img-bulk-case.png',  category: 'Institutional', description: '200 cans, 8 stations, 2 carry bags, annual service.' },
+  'INST-START': { id: 'INST-START', name: 'Starter Package',        price: 399.00,  image: './assets/img-bulk-case.png',  category: 'Institutional', description: '10 cans, 1 wall station, training guide.' },
+  'INST-PRO':   { id: 'INST-PRO',   name: 'Professional Package',   price: 1495.00,  image: './assets/img-bulk-case.png',  category: 'Institutional', description: '50 cans, 3 stations, carry bag, training.' },
+  'INST-ENT':   { id: 'INST-ENT',   name: 'Enterprise Package',     price: 4995.00, image: './assets/img-bulk-case.png',  category: 'Institutional', description: '200 cans, 8 stations, 2 carry bags, annual service.' },
 };
 
 const SHIPPING_THRESHOLD = 100;
